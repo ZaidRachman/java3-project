@@ -17,4 +17,15 @@
         <servlet-name>BMIServlet</servlet-name>
         <url-pattern>/body-mass</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TemperatureConverterServlet</servlet-name>
+        <url-pattern>/temp</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TemperatureConverterServlet</servlet-name>
+        <url-pattern>/temp-converter</url-pattern>
+    </servlet-mapping>
+    <error-page>
+        <location>/file-not-found.html</location>
+    </error-page>
 </web-app>
