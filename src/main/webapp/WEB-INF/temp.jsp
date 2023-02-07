@@ -13,8 +13,13 @@
         results = new HashMap<>();
     }
 
-    String temp1 = results.containsKey("tempInput") ? results.get("tempInput") : "";
+    String tempInput = results.containsKey("tempInput") ? results.get("tempInput") : "";
     String temp = results.containsKey("temp") ? results.get("temp") : "";
+    String unitTemp = results.containsKey("unitTemp") ? results.get("unitTemp") : "";
+
+    String invalidTempError = results.containsKey("invalidTempError") ?  results.get("invalidTempError") : "";
+    String unitTempError = results.containsKey("unitTempError") ?  results.get("unitTempError") : "";
+
 
 %>
 <!doctype html>
@@ -25,36 +30,36 @@
     <title>Temperature Converter</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/temp.css">
 </head>
 <body>
-<form action="temp" method="post" >
+<form action="temp" method="post">
+    <div class="row">
+        <h1>Temperature Converter</h1>
+    </div>
+    <div class="row">
+        <p>Input a number and choose how you want to convert it!</p>
+    </div>
     <div class="row">
         <div class="col-12">
-            <h1>Temperature Converter</h1>
-
+            <input type="text" id="tempInput" name="tempInput" value="<%= tempInput %>"/>
+            <label for="tempInput">Add temperature</label>
         </div>
-    </div>
-    <div class="row">
-        <p>IMPORTANT INSTRUCTIONS!</p>
-
-    </div>
-    <div class="row">
-        <div class="col-6">
-            <input type="text" id="tempInput" name="tempInput" value="<%= temp1 %>"/>
-            <label for="tempInput">Fahrenheit</label>
-        </div>
-        <div class="col-6">
-            <p id="tempResult">Celsius</p>
+        <div>
+            <p><%=invalidTempError%></p>
         </div>
     </div>
     <div class="row">
         <div class="col-6">
-            <input name="UnitTemp" type="radio" value="fahrenheit" id="fahrenheit">
-            <label>Fahrenheit</label>
+            <input name="unitTemp" type="radio" value="fahrenheit" id="fahrenheit">
+            <label>Fahrenheit to Celsius</label>
         </div>
         <div class="col-6">
-            <input name="UnitTemp" type="radio" value="celsius" id="celsius">
-            <label name="celsius">Celsius</label>
+            <input name="unitTemp" type="radio" value="celsius" id="celsius">
+            <label name="celsius">Celsius to Fahrenheit</label>
+        </div>
+        <div>
+            <p><%=unitTempError%></p>
         </div>
     </div>
     <div class="row">
@@ -62,6 +67,7 @@
         <p>Calculation: <%=temp%></p>
 
         <% } %>
+
         <input type="submit" value="Convert Temperature">
     </div>
 </form>

@@ -18,25 +18,55 @@ public class TemperatureConverterServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String tempToConvert = request.getParameter("tempInput");
-        String UnitTemp = request.getParameter("UnitTemp");
+        String unitTemp;
+        String resultStr;
+        if(request.getParameter("unitTemp") != null){
+            unitTemp = request.getParameter("unitTemp");
+        }
+        else {
+            unitTemp = "";
+
+        }
+        if(tempToConvert.equals("")){
+            tempToConvert = "0";
+        }
+
 
 
 
         Map<String, String> results = new HashMap<>();
         try{
-            if(UnitTemp.equals("fahrenheit")){
+            if(unitTemp.equals("fahrenheit")){
+                resultStr = String.format("%.3f",(Double.parseDouble(tempToConvert) - 32)*(5/9.0));
+                if(Double.parseDouble(tempToConvert) <= -459.67){
+                    results.put("invalidTempError","Number is to low");
+                }
+                else{
+                    results.put("temp", resultStr);
+                }
 
-                results.put("temp",Double.toString((Double.parseDouble(tempToConvert) - 32)*(5/9.0)));
-            } else{
-                results.put("temp",Double.toString((Double.parseDouble(tempToConvert) *9/5.0) + 32));
+            } else if (unitTemp.equals("celsius")){
+                resultStr = String.format("%.3f",(Double.parseDouble(tempToConvert) *9/5.0) + 32);
+                if(Double.parseDouble(tempToConvert) <= -273.15){
+                    results.put("invalidTempError","Number is to low");
+                }
+                else{
+                    results.put("temp", resultStr);
+                }
+
+            }
+            else if(unitTemp.equals("")){
+                results.put("unitTempError","Please pick a unit to convert to!");
             }
         }
         catch (NumberFormatException e){
+            results.put("invalidTempError","Invalid Temperature!");
 
         }
 
-        results.put("UnitTemp", UnitTemp);
-        results.put("temp1", tempToConvert);
+
+        results.put("unitTemp", unitTemp);
+        results.put("tempInput", tempToConvert);
         request.setAttribute("results", results);
         request.getRequestDispatcher("WEB-INF/temp.jsp").forward(request,response);
     }
