@@ -51,11 +51,11 @@
     </div>
     <div class="row">
         <div class="col-6">
-            <input name="unitTemp" type="radio" value="fahrenheit" id="fahrenheit">
+            <input name="unitTemp" type="radio" value="celsius" id="celsius">
             <label>Fahrenheit to Celsius</label>
         </div>
         <div class="col-6">
-            <input name="unitTemp" type="radio" value="celsius" id="celsius">
+            <input name="unitTemp" type="radio" value="fahrenheit" id="fahrenheit">
             <label name="celsius">Celsius to Fahrenheit</label>
         </div>
         <div>

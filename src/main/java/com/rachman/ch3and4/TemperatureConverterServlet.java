@@ -36,22 +36,22 @@ public class TemperatureConverterServlet extends HttpServlet {
 
         Map<String, String> results = new HashMap<>();
         try{
-            if(unitTemp.equals("fahrenheit")){
+            if(unitTemp.equals("celsius")){
                 resultStr = String.format("%.3f",(Double.parseDouble(tempToConvert) - 32)*(5/9.0));
                 if(Double.parseDouble(tempToConvert) <= -459.67){
                     results.put("invalidTempError","Number is to low");
                 }
                 else{
-                    results.put("temp", resultStr);
+                    results.put("temp", resultStr + " degrees " + unitTemp);
                 }
 
-            } else if (unitTemp.equals("celsius")){
+            } else if (unitTemp.equals("fahrenheit")){
                 resultStr = String.format("%.3f",(Double.parseDouble(tempToConvert) *9/5.0) + 32);
                 if(Double.parseDouble(tempToConvert) <= -273.15){
                     results.put("invalidTempError","Number is to low");
                 }
                 else{
-                    results.put("temp", resultStr);
+                    results.put("temp", resultStr + " degrees " + unitTemp);
                 }
 
             }

@@ -12,6 +12,6 @@
     <li><a href="temp">Temperature Converter</a> </li>
     <li><a href="bmi">BMI Calculator</a> </li>
 </ul>
-<a href="hello-servlet">Hello Servlet</a>
+<%--<a href="hello-servlet">Hello Servlet</a>--%>
 </body>
 </html>
