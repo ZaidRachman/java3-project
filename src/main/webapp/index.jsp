@@ -11,7 +11,12 @@
     <li><a href="add">Adding App</a></li>
     <li><a href="temp">Temperature Converter</a> </li>
     <li><a href="bmi">BMI Calculator</a> </li>
-    <li><a href="send-sms">Send a Text Message</a></li>
+    <li><a href="send-message">Send a Text Message</a></li>
+
+</ul>
+<h3>Chapters 5</h3>
+<ul>
+    <li><a href="view-users">View All Users</a></li>
 </ul>
 <%--<a href="hello-servlet">Hello Servlet</a>--%>
 </body>

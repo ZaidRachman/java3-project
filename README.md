@@ -21,3 +21,4 @@ We also learned about Java Server Pages (JSPs) which allow us to structure our a
 HTML. We then learned how to combine Servlets and JSPs to create a web application.
 Another item of interest we learned about is the WEB-INF folder. We learned how it can be used to 'hide' certain files from
 potential users.
+
