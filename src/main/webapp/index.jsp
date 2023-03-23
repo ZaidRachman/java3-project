@@ -22,6 +22,8 @@
 </ul>
 <h3>Fun Stuff</h3>
 <li><a href="countries">Countries</a></li>
+<li><a href="artist">Spotify App</a></li>
+
 <%--<a href="hello-servlet">Hello Servlet</a>--%>
 </body>
 </html>
