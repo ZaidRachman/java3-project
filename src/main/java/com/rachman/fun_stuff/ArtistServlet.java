@@ -16,8 +16,16 @@ public class ArtistServlet extends HttpServlet {
             q = "Abba";
         }
         request.setAttribute("artist", q);
+
+        System.out.println(q);
+
         Artist[] artists = MySpotify.searchArtists(q);
+
         request.setAttribute("artists", artists);
         request.getRequestDispatcher("WEB-INF/funstuff/artist.jsp").forward(request, response);
+
+
+
+
     }
 }

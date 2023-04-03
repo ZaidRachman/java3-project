@@ -64,7 +64,7 @@
 
                 <% } %>
             </td>
-            <td><a href="albums?artist=<%= artist.getId()%>"/><%= artist.getName() %></td>
+            <td><a href="albums?artistID=<%= artist.getId()%>&artistName=<%=artist.getName()%>"/><%= artist.getName() %></td>
             <td>
                 <% for(String genre: artist.getGenres()) { %>
                 <%= WordUtils.capitalize(genre) %><br>
