@@ -4,6 +4,7 @@
     <option name="state">
       <map>
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/ch5/countries.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/ch5" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/funstuff/artist.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/funstuff" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/temp.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       </map>
     </option>
